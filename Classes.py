@@ -12,6 +12,12 @@ class SoftwareEngineer:
         self.level = level
         self.salary = salary
 
+    def work(self):
+        print(self.name + "is working")
+
+    def notWorking(self):
+        print(self.name + "is not working")
+
 # instance
 se1 = SoftwareEngineer("Max", 20, "Junior", 5000)
 print(se1.name, se1.age)
