@@ -2,7 +2,6 @@ from datetime import datetime
 from datetime import date
 import calendar
 
-
 # Get the current dat
 today = date.today()
 print("Today's date: ", today)

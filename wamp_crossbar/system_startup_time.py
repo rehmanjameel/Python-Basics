@@ -47,18 +47,16 @@ def find_pi(pi_value):
 
 
 def find_cpu_cores():
-    total = psutil.cpu_count()
-    cpu_cores = psutil.cpu_count() / 2
-    threads_percore = psutil.cpu_count() / psutil.cpu_count(logical=False)
-    info = {"cores": cpu_cores,
-            "threads_per_core": threads_percore,
-            "cpu_count": total}
+    info = {
+        "cores": psutil.cpu_count(logical=False),
+        "threads": psutil.cpu_count(logical=True)
+    }
     print(info)
     return info
 
 
 def get_remaining_ram():
-    ram_free_space = (psutil.virtual_memory()[4]) / (1024 * 1024 * 1024)
+    ram_free_space = psutil.virtual_memory().free / (1024 * 1024 * 1024)
     print(ram_free_space)
     return ram_free_space
 
